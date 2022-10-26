@@ -43,3 +43,23 @@ application {
     // Define the main class for the application.
     mainClass = 'com.king.worktest.Starter'
 }
+
+
+sourceSets {
+    main {
+        java
+        {
+            srcDir 'src'
+        }
+        resources
+        {
+            srcDirs './conf', '../shared/resources'
+        }
+    }
+    test {
+        java {
+            // Fixes issue where the declared package "com.king.worktest" does not match the expected package "src.com.king.worktest"
+            srcDir 'test/src'
+        }
+    }
+}
