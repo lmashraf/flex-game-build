@@ -63,3 +63,17 @@ sourceSets {
         }
     }
 }
+
+task runServer(type: JavaExec) {
+
+    // Debug to get Classpath
+    doFirst
+    {
+        sourceSets.main.runtimeClasspath.each { println it}
+        //println sourceSets.main.runtimeClasspath
+    }
+
+    classpath = files('build/libs/server.jar')
+    classpath += sourceSets.main.runtimeClasspath
+    main = 'com.king.worktest.Starter'
+}
