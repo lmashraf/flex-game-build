@@ -1,21 +1,4 @@
-<<<<<<< HEAD
-.vscode
-=======
-gradle/
->>>>>>> Updated .gitignore with gradle folder
 .gradle
-
-# Ignore client build artifacts
-client/generated/
-client/target/**
-
-# Ignore server build artifacts
-server/bin/main/**
-server/bin/test/**
-server/work/**
-server/web/WorkClient.swf
-**/build/
-!src/**/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -41,6 +24,18 @@ gradle-app.setting
 # Executables folders
 */bin/main
 */bin/test
+
+# Ignore client build artifacts
+client/generated/
+client/target/**
+
+# Ignore server build artifacts
+server/bin/main/**
+server/bin/test/**
+server/work/**
+server/web/WorkClient.swf
+**/build/
+!src/**/build/
 
 # VSCode folder
 .vscode/
