@@ -1,0 +1,23 @@
+<configuration scan="true">
+    <appender name="DEFAULT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/default.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/default.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyyMMdd HH:mm:ss:SSS} %5level %msg %ex{full} [%class.%method\(\) @ %line]%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyyMMdd HH:mm:ss:SSS} %5level %msg %ex{full} [%class.%method\(\) @ %line]%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <root level="all">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
