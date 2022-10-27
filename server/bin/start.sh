@@ -1,8 +1,10 @@
 #!/bin/bash
 
-JAVA_STARTER="com.king.worktest.Starter"
-CLASSPATH=$(find -name 'server.jar';)
+# JAVA_STARTER="com.king.worktest.Starter"
+# CLASSPATH=
 
-echo 'Executing: ' $(echo $CLASSPATH)
+# java -cp $CLASSPATH $JAVA_STARTER
 
-java -cp $CLASSPATH $JAVA_STARTER
+# Using gradle task to build and run the server
+gradle build
+gradle runApp
