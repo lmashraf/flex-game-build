@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Artifact Properties-->
+    <groupId>com.king.worktest.client</groupId>
+    <artifactId>WorkClient</artifactId>
+    <version>0.1-snapshot</version>
+
+    <name>WorkClient</name>
+
+    <packaging>swf</packaging>
+
+    <!-- Flex SDK Version -->
+    <properties>
+        <flex.sdk.version>4.5.0.20967</flex.sdk.version>
+    </properties>
+
+    <build>
+        <!-- Sources -->
+        <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>test</testSourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.flexmojos</groupId>
+                <artifactId>flexmojos-maven-plugin</artifactId>
+                <version>4.2-beta</version>
+                <extensions>true</extensions>
+
+                <configuration>
+                    <debug>false</debug>
+                    <as3>true</as3>
+                    <sourceFile>${project.basedir}/com/king/worktest/client/Client.as</sourceFile>
+                    <optimize>true</optimize>
+                </configuration>
+
+                <!-- FlexMojos plugin dependency -->
+                <dependencies>
+                    <dependency>
+                        <groupId>com.adobe.flex</groupId>
+                        <artifactId>compiler</artifactId>
+                        <version>${flex.sdk.version}</version>
+                        <type>pom</type>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Repositories -->
+    <repositories>
+        <repository>
+            <id>flex-mojos-repository</id>
+            <url>http://repository.sonatype.org/content/groups/flexgroup</url>
+        </repository>
+        <repository>
+            <id>jcenter-repository</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>flex-mojos-plugin-repository</id>
+            <url>http://repository.sonatype.org/content/groups/flexgroup</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <!-- Dependencies -->
+    <dependencies>
+        <!-- https://repository.sonatype.org/content/groups/flexgroup/com/adobe/flex/ -->
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>flex-framework</artifactId>
+            <version>${flex.sdk.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- https://repository.sonatype.org/content/groups/flexgroup/com/adobe/flexunit/flexunit/4.0-rc-1/ -->
+        <dependency>
+            <groupId>com.adobe.flexunit</groupId>
+            <artifactId>flexunit</artifactId>
+            <version>4.0-rc-1</version>
+            <type>swc</type>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://repository.sonatype.org/content/groups/flexgroup/hamcrest-as3/hamcrest-as3 -->
+        <dependency>
+            <groupId>hamcrest-as3</groupId>
+            <artifactId>hamcrest-as3</artifactId>
+            <version>1.1.0</version>
+            <type>swc</type>
+        </dependency>
+
+        <!-- ./libs/as3corelib (locally) -->
+        <dependency>
+            <groupId>com.adobe</groupId>
+            <artifactId>as3corelib</artifactId>
+            <version>0.93</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../libs/as3corelib-0.93.swc</systemPath>
+            <type>swc</type>
+        </dependency>
+
+    </dependencies>
+
+</project>
