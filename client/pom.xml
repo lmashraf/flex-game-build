@@ -15,7 +15,7 @@
 
     <!-- Flex SDK Version -->
     <properties>
-        <flex.sdk.version>4.5.0.20967</flex.sdk.version>
+        <flex.sdk.version>4.6.b.23201</flex.sdk.version>
     </properties>
 
     <build>
@@ -33,8 +33,11 @@
                 <configuration>
                     <debug>false</debug>
                     <as3>true</as3>
-                    <sourceFile>${project.basedir}/com/king/worktest/client/Client.as</sourceFile>
+                    <sourceFile>${project.build.sourceDirectory}/com/king/worktest/client/Client.as</sourceFile>
                     <optimize>true</optimize>
+                    <includeTestFiles>
+                        <includeTestFile>${project.build.testDirectory}/com/king/worktest/client/*Test.as</includeTestFile>
+                    </includeTestFiles>
                 </configuration>
 
                 <!-- FlexMojos plugin dependency -->
@@ -93,16 +96,6 @@
             <groupId>hamcrest-as3</groupId>
             <artifactId>hamcrest-as3</artifactId>
             <version>1.1.0</version>
-            <type>swc</type>
-        </dependency>
-
-        <!-- ./libs/as3corelib (locally) -->
-        <dependency>
-            <groupId>com.adobe</groupId>
-            <artifactId>as3corelib</artifactId>
-            <version>0.93</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/../libs/as3corelib-0.93.swc</systemPath>
             <type>swc</type>
         </dependency>
 
