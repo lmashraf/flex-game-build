@@ -1,10 +1,13 @@
 #!/bin/bash
+export CLIENT_DIR="../client"
+export SERVER_DIR="../server"
 
-# JAVA_STARTER="com.king.worktest.Starter"
-# CLASSPATH=
+# Build the client
+echo "## Building the Game Client..."
+cd ${CLIENT_DIR}
+./build.sh
 
-# java -cp $CLASSPATH $JAVA_STARTER
-
-# Using gradle task to build and run the server
-gradle build
+# Build and run the Server
+echo "## Running the Game Server..."
+cd ${SERVER_DIR}
 gradle run
