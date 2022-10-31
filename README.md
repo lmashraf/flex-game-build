@@ -29,18 +29,16 @@ sudo update-alternatives --config java
 
 `sudo apt-get install maven`
 
-## How to Build
+## How to Run
 
-Since the binary resulting from the Client build is needed to run the server, the build order is important.
+From the root folder of the repository, simply run `cd server && ./bin/start.sh` this shall execute the Client build first, insure all the necessary preconditions, and then run the server accordingly.
 
-### Client
+## TODO:
 
-- To start the build and packaging of the WorkClient.SWF file, simply run the commands:
+Following error needs to be fixed 
 
 ```
-cd client
-./build.sh
+javax.servlet.ServletException: org.apache.jasper.JasperException: Unable to compile class for JSP
 ```
-This shall copy the shared resources and the packaged SWF to their respective locations inside `client` and `server` folders.
 
-### Server
+- Either related to an incompatibility between the dependencies used on the Server gradle build and/or a misconfiguration with the web resources path when accessing it from WebServer.java file.
