@@ -4,8 +4,9 @@ export SERVER_DIR="../server"
 
 # Build the client
 echo "## Building the Game Client..."
+
 cd ${CLIENT_DIR}
-./build.sh
+./build_client.sh
 
 # Build and run the Server
 echo "## Running the Game Server..."
