@@ -41,4 +41,4 @@ Following error needs to be fixed
 javax.servlet.ServletException: org.apache.jasper.JasperException: Unable to compile class for JSP
 ```
 
-- Either related to an incompatibility between the dependencies used on the Server gradle build and/or a misconfiguration with the web resources path when accessing it from WebServer.java file.
+- It may be related to either an incompatibility between the dependencies used on the Server gradle build and/or a misconfiguration with the web resources path when accessing it from WebServer.java file, which needs investigating.
