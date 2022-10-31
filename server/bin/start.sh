@@ -7,4 +7,4 @@
 
 # Using gradle task to build and run the server
 gradle build
-gradle runApp
+gradle run
